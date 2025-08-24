@@ -13,17 +13,25 @@
         }
         header {
             background: linear-gradient(90deg, #FFD600 0%, #FFB300 100%);
-            color: #222;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-            border-bottom: 1px solid #ffe066;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            padding-left: 2.5vw;
-            padding-right: 2.5vw;
-        }
-        nav {
-            margin-top: 0.5em;
+            @media (max-width: 600px) {
+                .job-details {
+                    font-size: 0.88rem;
+                }
+                .job-details strong {
+                    font-size: 0.95em;
+                }
+            }
+            .job-details {
+                display: none;
+                margin-top: 1.2em;
+                background: #fff;
+                padding: 1.2em 1em 1em 1em;
+                border-radius: 10px;
+                border: 1px solid #ffe066;
+                box-shadow: 0 2px 8px rgba(255, 214, 0, 0.04);
+                font-size: 1rem;
+                color: #333;
+                animation: fadeIn 0.3s;
         }
         nav a {
             padding: 0.5em 1em;
@@ -82,8 +90,8 @@
         font-size: 1rem;
     }
     .job-meta {
-        font-size: 0.9rem;
-        gap: 0.2em 0.5em;
+        font-size: 0.82rem;
+        gap: 0.15em 0.3em;
     }
     .company-name {
         font-size: 0.95rem;
@@ -98,9 +106,16 @@
     }
     header div[style*="display: flex;"] {
         flex-direction: column !important;
-        align-items: flex-start !important;
-        gap: 0.5em !important;
+        align-items: stretch !important;
+        gap: 0.7em !important;
         min-height: unset !important;
+    }
+    header > div > div[style*="display: flex;"]:first-child {
+        margin-bottom: 0.5em !important;
+    }
+    header > div > div[style*="position: absolute;"] {
+        margin-bottom: 0.5em !important;
+        margin-top: 0 !important;
     }
     header img[alt="Career Transaction Logo"] {
         height: 2.2em !important;
@@ -255,15 +270,20 @@
         }
     </style>
     <script>
-        // Show footer only when scrolled to bottom
-        window.addEventListener('scroll', function() {
+        // Show footer only when scrolled to bottom (fix for mobile: also show if content is short)
+        function updateFooterVisibility() {
             var footer = document.querySelector('footer');
-            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 2) {
+            var atBottom = (window.innerHeight + window.scrollY) >= document.body.offsetHeight - 2;
+            var contentShort = document.body.offsetHeight <= window.innerHeight + 2;
+            if (atBottom || contentShort) {
                 footer.style.display = 'block';
             } else {
                 footer.style.display = 'none';
             }
-        });
+        }
+        window.addEventListener('scroll', updateFooterVisibility);
+        window.addEventListener('resize', updateFooterVisibility);
+        window.addEventListener('DOMContentLoaded', updateFooterVisibility);
         function toggleDetails(id) {
             var details = document.getElementById(id);
             if (details.style.display === "block") {
