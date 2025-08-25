@@ -11,9 +11,27 @@
             font-family: 'Inter', Arial, sans-serif;
             background: linear-gradient(135deg, #f7f7f7 60%, #fffbe6 100%);
         }
+        @media (max-width: 300px) {
+            header h1 {
+                font-size: 1.1em !important;
+            }
+        }
         header {
             background: linear-gradient(90deg, #FFD600 0%, #FFB300 100%);
             @media (max-width: 600px) {
+        header > div {
+            min-height: 2em !important;
+            padding-top: 0.3em !important;
+            padding-bottom: 0.3em !important;
+            height: 2em !important;
+            box-sizing: border-box !important;
+        }
+        header {
+            min-height: 2em !important;
+            height: 2em !important;
+            padding: 0 !important;
+            box-sizing: border-box !important;
+        }
                 .job-details {
                     font-size: 0.88rem;
                 }
@@ -71,69 +89,101 @@
         font-size: 1rem;
     }
 }
-@media (max-width: 600px) {
-    main {
-        max-width: 100vw;
-        padding: 0.5em 0.1em;
-        margin: 0.7em 0 1.2em 0;
+    @media (max-width: 600px) {
+        main {
+            max-width: 100vw;
+            padding: 0.5em 0.1em;
+            margin: 0.7em 0 1.2em 0;
+        }
+        h2 {
+            font-size: 1rem;
+            margin-bottom: 0.7em;
+        }
+        .job-list li {
+            padding: 0.5em 0.1em 0.4em 0.1em;
+            margin-left: 0.2em;
+            margin-right: 0.2em;
+        }
+        .job-list h3 {
+            font-size: 1rem;
+        }
+        .job-meta {
+            font-size: 0.82rem;
+            gap: 0.15em 0.3em;
+        }
+        .company-name {
+            font-size: 0.95rem;
+            padding: 0.1em 0.5em;
+        }
+        body {
+            font-size: 0.92rem;
+        }
+        header div[style*="display: flex;"] h1 {
+            font-size: 0.045rem !important;
+            height: 0.09em !important;
+            white-space: nowrap !important;
+            overflow: hidden !important;
+            text-overflow: ellipsis !important;
+            max-width: 40vw !important;
+            letter-spacing: 0.1px !important;
+            padding: 0 !important;
+            margin: 0 auto !important;
+        }
+        header div[style*="display: flex;"] {
+            flex-direction: column !important;
+            align-items: stretch !important;
+            gap: 0.5em !important;
+            min-height: unset !important;
+        }
+        header > div > div[style*="display: flex;"]:first-child {
+            order: 1;
+            margin-bottom: 0 !important;
+            justify-content: center !important;
+            text-align: center !important;
+        }
+        header > div > div[style*="position: absolute;"] {
+            order: 2;
+            position: static !important;
+            transform: none !important;
+            margin: 0.2em 0 0.2em 0 !important;
+            min-width: unset !important;
+            max-width: 100vw !important;
+            justify-content: center !important;
+            text-align: center !important;
+        }
+        header > div > div[style*="justify-content: flex-end;"] {
+            order: 3;
+            margin-bottom: 0.2em !important;
+            justify-content: center !important;
+            text-align: center !important;
+            align-items: center !important;
+            display: flex !important;
+            width: 100% !important;
+        }
+        header img[alt="Career Transaction Logo"] {
+            height: 2.2em !important;
+            width: 2.2em !important;
+        }
+        header div[style*="position: absolute;"] {
+            position: static !important;
+            transform: none !important;
+            margin-top: 0.5em !important;
+            margin-bottom: 0.5em !important;
+            min-width: unset !important;
+            max-width: 50vw !important;
+            font-size: 0.8em !important;
+            padding: 0.08em 0.3em !important;
+        }
+        header div[style*="position: absolute;"] select {
+            font-size: 0.8em !important;
+            padding: 0.12em 0.5em !important;
+            min-width: 60px !important;
+        }
+        #visit-counter {
+            right: 1vw !important;
+            font-size: 0.38em !important;
+        }
     }
-    h2 {
-        font-size: 1rem;
-        margin-bottom: 0.7em;
-    }
-    .job-list li {
-        padding: 0.5em 0.1em 0.4em 0.1em;
-        margin-left: 0.2em;
-        margin-right: 0.2em;
-    }
-    .job-list h3 {
-        font-size: 1rem;
-    }
-    .job-meta {
-        font-size: 0.82rem;
-        gap: 0.15em 0.3em;
-    }
-    .company-name {
-        font-size: 0.95rem;
-        padding: 0.1em 0.5em;
-    }
-    body {
-        font-size: 0.92rem;
-    }
-    header h1 {
-        font-size: 1rem;
-        height: 2em;
-    }
-    header div[style*="display: flex;"] {
-        flex-direction: column !important;
-        align-items: stretch !important;
-        gap: 0.7em !important;
-        min-height: unset !important;
-    }
-    header > div > div[style*="display: flex;"]:first-child {
-        margin-bottom: 0.5em !important;
-    }
-    header > div > div[style*="position: absolute;"] {
-        margin-bottom: 0.5em !important;
-        margin-top: 0 !important;
-    }
-    header img[alt="Career Transaction Logo"] {
-        height: 2.2em !important;
-        width: 2.2em !important;
-    }
-    header div[style*="position: absolute;"] {
-        position: static !important;
-        transform: none !important;
-        margin-top: 0.5em !important;
-        margin-bottom: 0.5em !important;
-        min-width: unset !important;
-        max-width: 100vw !important;
-    }
-    #visit-counter {
-        right: 1vw !important;
-        font-size: 0.38em !important;
-    }
-}
         }
         h2 {
             font-size: 2rem;
@@ -259,6 +309,12 @@
             border-top: 1px solid #ffe066;
             box-shadow: 0 -2px 8px rgba(0,0,0,0.04);
             display: none;
+        }
+        @media (max-width: 600px) {
+            footer {
+                font-size: 0.5rem !important;
+                padding: 0.25em !important;
+            }
         }
         @media (max-width: 600px) {
             main {
