@@ -365,7 +365,7 @@
                 <h1 style="margin: 0; display: flex; align-items: center; height: 2.5em; font-size: 2em; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; color: #1565c0;">CAREER TRANSACTION</h1>
             </div>
             <!-- Center: Desired Domain -->
-            <div style="display: flex; align-items: center; gap: 0.7em; flex-wrap: nowrap; background: #fffbe6; border: 1px solid #ffe066; border-radius: 16px; padding: 0.3em 1.2em; box-shadow: 0 1px 4px rgba(255,214,0,0.07); min-width: 220px; max-width: 400px; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 2;">
+            <div class="domain-selector-container" style="display: flex; align-items: center; gap: 0.7em; flex-wrap: nowrap; background: #fffbe6; border: 1px solid #ffe066; border-radius: 16px; padding: 0.3em 1.2em; box-shadow: 0 1px 4px rgba(255,214,0,0.07); min-width: 220px; max-width: 400px; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 2;">
                 <span style="font-weight: 600; color: #222; letter-spacing: 0.2px; white-space: nowrap;">Desired Domain</span>
                 <select id="domainFilter" style="padding: 0.35em 1.2em; border-radius: 8px; border: 1px solid #ffd600; font-size: 1em; background: #fff; color: #222; font-family: inherit; outline: none; transition: border 0.2s; white-space: nowrap; min-width: 120px;">
                     <option value="Aerospace Technical Writing">Aerospace Technical Writing</option>
@@ -378,7 +378,13 @@
                 </select>
             </div>
             <!-- Right: Contact -->
-            <div style="display: flex; align-items: center; justify-content: flex-end; min-width: 160px;">
+            <div class="nav-mobile-row" style="display: flex; align-items: center; justify-content: flex-end; min-width: 160px;">
+                <a href="preparation.html" title="Preparation" style="display: flex; align-items: center; gap: 0.4em; background: #e3f2fd; color: #1565c0; font-weight: 600; border-radius: 16px; padding: 0.3em 1.2em; border: 1px solid #90caf9; box-shadow: 0 1px 4px rgba(21,101,192,0.07); text-decoration: none; margin-right: 0.5em; font-size: 1.1em;">
+                    <span style="font-size: 1.2em;"></span> Preparation
+                </a>
+                <a href="faq.html" title="FAQ" style="display: flex; align-items: center; gap: 0.4em; background: #e3f2fd; color: #1565c0; font-weight: 600; border-radius: 16px; padding: 0.3em 1.2em; border: 1px solid #90caf9; box-shadow: 0 1px 4px rgba(21,101,192,0.07); text-decoration: none; margin-right: 0.5em; font-size: 1.1em;">
+                    <span style="font-size: 1.2em;"></span> FAQ
+                </a>
                 <a href="https://chat.whatsapp.com/ERKNttMYaYELD7sEIMnFgi?mode=ems_copy_t" target="_blank" style="display: flex; align-items: center; gap: 0.4em; background: #e3f2fd; color: #1565c0; font-weight: 600; border-radius: 16px; padding: 0.3em 1.2em; border: 1px solid #90caf9; box-shadow: 0 1px 4px rgba(21,101,192,0.07); text-decoration: none;">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="height: 1.2em; width: 1.2em; vertical-align: middle;"> Contact
                 </a>
@@ -615,6 +621,22 @@
                 details.style.display = "block";
             }
         }
+        // FAQ toggle logic
+        document.addEventListener('DOMContentLoaded', function() {
+            var faqToggle = document.getElementById('faq-toggle');
+            var faqList = document.getElementById('faq-list');
+            if (faqToggle && faqList) {
+                faqToggle.addEventListener('click', function() {
+                    if (faqList.style.display === 'none') {
+                        faqList.style.display = 'block';
+                        faqToggle.innerHTML = '<span style="font-size: 1.2em;">❓</span> Hide FAQ';
+                    } else {
+                        faqList.style.display = 'none';
+                        faqToggle.innerHTML = '<span style="font-size: 1.2em;">❓</span> View FAQ';
+                    }
+                });
+            }
+        });
 
         // Click counter logic
         function handleClick(detailsId, counterId) {
