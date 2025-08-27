@@ -330,6 +330,19 @@
                 padding: 1em 0.7em 0.7em 0.7em;
             }
         }
+        @media (max-width: 600px) {
+  .job-details .hr-contact-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.2em !important;
+  }
+  .job-details .hr-contact-row span {
+    min-width: unset !important;
+    width: 100% !important;
+    text-align: left !important;
+    margin-bottom: 0.2em !important;
+  }
+}
     </style>
     <script>
         // Show footer only when scrolled to bottom (fix for mobile: also show if content is short)
@@ -360,9 +373,9 @@
     <header>
     <div style="display: flex; align-items: center; justify-content: space-between; gap: 1.2em; flex-wrap: wrap; width: 100%; position: relative; min-height: 4em;">
             <!-- Left: Logo and Title -->
-            <div style="display: flex; align-items: center; gap: 1em; min-width: 200px;">
+            <div style="display: flex; align-items: center; gap: 0.5em; min-width: 200px; flex-direction: row;">
                 <img src="logo.png" alt="Career Transaction Logo" style="height: 3.5em; width: 3.5em; object-fit: contain; display: block;" />
-                <h1 style="margin: 0; display: flex; align-items: center; height: 2.5em; font-size: 2em; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; color: #1565c0;">CAREER TRANSACTION</h1>
+                <span style="display: flex; align-items: center; height: 100%;"><h1 style="margin: 0; font-size: 2em; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; color: #1565c0; font-family: 'Inter', Arial, sans-serif;">CAREER TRANSACTION</h1></span>
             </div>
             <!-- Center: Desired Domain -->
             <div class="domain-selector-container" style="display: flex; align-items: center; gap: 0.7em; flex-wrap: nowrap; background: #fffbe6; border: 1px solid #ffe066; border-radius: 16px; padding: 0.3em 1.2em; box-shadow: 0 1px 4px rgba(255,214,0,0.07); min-width: 220px; max-width: 400px; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 2;">
@@ -393,8 +406,8 @@
     </header>
     <main>
     <h2 style="position: relative; font-size: 1.5em; font-weight: 900; color: #111; letter-spacing: 1px; margin-bottom: 1.2em; text-transform: uppercase; height: 2.5em; display: flex; align-items: center; justify-content: center;">
-        <span style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: max-content;">Available Jobs</span>
-    <span id="visit-counter" style="position: absolute; right: 2.5vw; top: 50%; transform: translateY(-50%); font-size:0.48em; color:#888; font-weight:600;">Website Visits: 0</span>
+    <span style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: max-content;">Available Jobs</span>
+    <span id="visit-counter" style="position: absolute; right: 1.5em; top: 50%; transform: translateY(-50%); font-size:0.95em; color:#888; font-weight:600; white-space: nowrap;">Website Visits: 0</span>
     </h2>
     <ul class="job-list">
 
@@ -403,9 +416,10 @@
                 <div class="job-meta" style="flex-wrap: wrap; gap: 1.5em;">
                     <div><span>🏢</span> <span class="company-name">Omega Healthcare</span></div>
                     <div><span>💼</span> Medical coder</div>
-                    <div><span>🌐</span> Healthcare</div>
                     <div><span>📍</span> Coimbatore</div>
+                    <div><span>🎓</span> <strong>Experience:</strong> -</div>
                     <div><span>🗓️</span> Posted: 24 Aug 2025</div>
+                    <div><span>⏰</span> Last date: -</div>
                 </div>
                 <div style="display: flex; align-items: center; gap: 0.5em;">
                     <button onclick="handleClick('details8', 'counter8')" style="margin: 0;">View Details</button>
@@ -413,7 +427,13 @@
                 </div>
                 <div class="job-details" id="details8">
                     <strong>About company:</strong> Omega Healthcare is a leading provider of healthcare outsourcing services.<br>
-                    <strong>Roles & responsibilities:</strong> Will be updated soon...
+                    <strong>Project:</strong> Healthcare<br>
+                    <strong>Educational qualification:</strong> -<br>
+                    <strong>Roles & responsibilities:</strong> Will be updated soon...<br>
+                    <div class="hr-contact-row" style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.7em;">
+                        <div style="flex: 1; min-width: 180px;"><strong>HR Mobile:</strong> -</div>
+                        <div style="flex: 1; min-width: 220px; text-align: right;"><strong>HR Email:</strong> -</div>
+                    </div>
                 </div>
             </li>
             <li data-domain="Aerospace Technical Writing">
@@ -424,8 +444,8 @@
                 <div class="job-meta" style="flex-wrap: wrap; gap: 1.5em;">
                     <div><span>🏢</span> <span class="company-name">Sonovision Aetos</span></div>
                     <div><span>💼</span> Technical author</div>
-                    <div><span>🌐</span> Airbus WDM</div>
                     <div><span>📍</span> Bengaluru</div>
+                    <div><span>🎓</span> Experience: Intern/Fresher</div>
                     <div><span>🗓️</span> Posted: 24 Aug 2025</div>
                     <div><span>⏰</span> Last date: 28 Aug 2025</div>
                 </div>
@@ -435,8 +455,10 @@
                 </div>
                 <div class="job-details" id="details1">
                     <strong>About company:</strong> Sonovision Aetos is a leading provider of technical documentation and engineering services for the aerospace industry.<br>
+                    <strong>Project:</strong> Airbus WDM<br>
+                    <strong>Educational qualification:</strong> AME Avionics (B2) or diploma (electrical/EEE/ECE)<br>
                     <strong>Roles & responsibilities:</strong>
-                    <ul>
+                    <ul style="margin:0.7em 0 0.7em 1.2em;">
                         <li>Ability to adapt quickly to project requirements</li>
                         <li>Ability to work in cross-functional teams.</li>
                         <li>Understanding of electrical systems and aircraft circuit diagrams.</li>
@@ -444,7 +466,6 @@
                     <div style="background:#fffbe6; border:1px solid #ffe066; border-radius:8px; padding:1em; margin:1em 0;">
                         <strong>We are looking for passionate interns!</strong><br>
                         Join us in Bangalore for a <strong>2–4 month internship program</strong> starting <strong>1st September 2025</strong>.<br>
-                        <strong>Educational background:</strong> AME Avionics (B2) or diploma (electrical/EEE/ECE)</strong><br>
                         This is a great opportunity to gain hands-on experience in the aerospace domain.<br>
                         If you are eager to learn and grow in a collaborative aerospace environment, apply now.<br>
                         <ul style="margin:0.7em 0 0.7em 1.2em;">
@@ -452,10 +473,9 @@
                             <li>👥 <strong>Face-to-face interviews for shortlisted candidates:</strong> Monday, 25th August 2025</li>
                         </ul>
                     </div>
-                    <hr style="margin:1em 0;">
-                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1em;">
-                        <div style="flex: 1; min-width: 180px;"><strong>HR mobile:</strong> <a href="tel:+919900672602">+91-9900672602</a></div>
-                        <div style="flex: 1; min-width: 220px; text-align: right;"><strong>HR email:</strong> <a href="mailto:recruiter@sonovision-aetos.in">recruiter@sonovision-aetos.in</a></div>
+                    <div class="hr-contact-row" style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.7em;">
+                        <span style="flex: 1; min-width: 180px;"><strong>HR Mobile:</strong> <a href="tel:+919900672602">+91-9900672602</a></span>
+                        <span style="flex: 1; min-width: 220px; text-align: right;"><strong>HR Email:</strong> <a href="mailto:recruiter@sonovision-aetos.in">recruiter@sonovision-aetos.in</a></span>
                     </div>
                 </div>
             </li>
@@ -464,9 +484,10 @@
                 <div class="job-meta" style="flex-wrap: wrap; gap: 1.5em;">
                     <div><span>🏢</span> <span class="company-name">Akkodis India Pvt Ltd.</span></div>
                     <div><span>💼</span> Project leader</div>
-                    <div><span>🌐</span> Airbus AMM</div>
                     <div><span>📍</span> Bengaluru</div>
+                    <div><span>🎓</span> Experience: 8+ years</div>
                     <div><span>🗓️</span> Posted: 18 Aug 2025</div>
+                    <div><span>⏰</span> Last date: -</div>
                 </div>
                 <div style="display: flex; align-items: center; gap: 0.5em;">
                     <button onclick="handleClick('details2', 'counter2')" style="margin: 0;">View Details</button>
@@ -474,28 +495,24 @@
                 </div>
                 <div class="job-details" id="details2">
                     <strong>About company:</strong> Akkodis specializes in engineering and digital solutions for the aerospace sector, delivering high-quality documentation and support.<br>
+                    <strong>Project:</strong> Airbus AMM<br>
+                    <strong>Educational qualification:</strong> Aeronautical engineering/AME degree<br>
                     <strong>Roles & responsibilities:</strong> Lead a 30–40 member team delivering high-quality AMM documentation for Airbus. If you have 8+ years of experience in Airbus TechData projects and proven team leadership, we want to hear from you!<br>
-                    <ul>
-                        <li>Lead a 30–40 member team delivering high-quality AMM documentation for Airbus. If you have 8+ years of experience in Airbus TechData projects and proven team leadership, we want to hear from you!</li>
-                    </ul>
-                        <strong>Experience:</strong> <span style="font-weight: normal; color: #111;">8+ years</span><br>
-                        <strong>Educational qualification:</strong> <span style="font-weight: normal; color: #111;">Aeronautical engineering/AME degree</span>
-                        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1em; margin-bottom: 0.7em;">
-                            <div style="flex: 1; min-width: 180px;"><strong>HR Mobile:</strong> <a href="tel:+919035092622">+91-9035092622</a></div>
-                            <div style="flex: 1; min-width: 220px; text-align: right;">
-                                <a href="https://forms.office.com/pages/responsepage.aspx?id=FDQO7VZuTEWKguuAvvtzixZo2WDasq9NkcXxjP-zA9NUMzczMkNaWjhKWFpLSjZSWklMT0dKVEVRMS4u&route=shorturl" target="_blank" style="display:inline-block;padding:0.5em 1.5em;background:#1565c0;color:#fff;border-radius:8px;font-weight:600;text-decoration:none;box-shadow:0 1px 4px rgba(21,101,192,0.10);">Apply Now</a>
-                            </div>
-                        </div>
+                    <div class="hr-contact-row" style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.7em;">
+                        <span style="flex: 1; min-width: 180px;"><strong>HR Mobile:</strong> <a href="tel:+919035092622">+91-9035092622</a></span>
+                        <span style="flex: 1; min-width: 220px; text-align: right;"><strong>HR Email:</strong> <a href="https://forms.office.com/pages/responsepage.aspx?id=FDQO7VZuTEWKguuAvvtzixZo2WDasq9NkcXxjP-zA9NUMzczMkNaWjhKWFpLSjZSWklMT0dKVEVRMS4u&route=shorturl" target="_blank">Apply Now</a></span>
+                    </div>
                 </div>
             </li>
             <li data-domain="Aerospace Technical Writing">
                 <h3>Aerospace technical writing</h3>
                 <div class="job-meta" style="flex-wrap: wrap; gap: 1.5em;">
-                    <div><span>🏢</span> <span class="company-name">Capgemini Technology Services</span></div>
+                    <div><span>🏢</span> <span class="company-name">Capgemini Tech. Services</span></div>
                     <div><span>💼</span> Documentation engineer</div>
-                    <div><span>🌐</span> Boeing project</div>
                     <div><span>📍</span> Chennai</div>
+                    <div><span>🎓</span> Experience: 3-6 years</div>
                     <div><span>🗓️</span> Posted: 20 Aug 2025</div>
+                    <div><span>⏰</span> Last date: -</div>
                 </div>
                 <div style="display: flex; align-items: center; gap: 0.5em;">
                     <button onclick="handleClick('details3', 'counter3')" style="margin: 0;">View Details</button>
@@ -503,13 +520,12 @@
                 </div>
                 <div class="job-details" id="details3">
                     <strong>About company:</strong> Capgemini is a global leader in consulting, digital transformation, technology, and engineering services, with a strong presence in the aerospace sector.<br>
-                                <div style="display: flex; align-items: flex-start; gap: 0; flex-wrap: wrap;">
-                                    <strong style="margin: 0;">Roles & responsibilities:</strong>
-                                    <span style="margin-left: 0;">Develop and maintain aerospace technical documents and manuals. Collaborate with engineering teams to gather and clarify technical information. Ensure compliance with industry standards and client requirements.</span>
-                                </div>
-                    <hr style="margin:1em 0;">
-                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1em;">
-                        <div style="flex: 1; min-width: 180px;"><strong>Mobile:</strong> <a href="tel:+917619218498">+91-7619218498</a></div>
+                    <strong>Project:</strong> Boeing project<br>
+                    <strong>Educational qualification:</strong>Btech Aeronautical/AME<br>
+                    <strong>Roles & responsibilities:</strong> Develop and maintain aerospace technical documents and manuals. Collaborate with engineering teams to gather and clarify technical information. Ensure compliance with industry standards and client requirements.<br>
+                    <div class="hr-contact-row" style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.7em;">
+                        <span style="flex: 1; min-width: 180px;"><strong>HR Mobile:</strong> <a href="tel:+917619218498">+91-7619218498</a></span>
+                        <span style="flex: 1; min-width: 220px; text-align: right;"><strong>HR Email:</strong> -</span>
                     </div>
                 </div>
             </li>
@@ -519,9 +535,10 @@
                 <div class="job-meta" style="flex-wrap: wrap; gap: 1.5em;">
                     <div><span>🏢</span> <span class="company-name">Applied Materials</span></div>
                     <div><span>💼</span> Technical writer</div>
-                    <div><span>🌐</span> Documentation</div>
                     <div><span>📍</span> Bengaluru</div>
-                    <div><span>🗓️</span> Posted: 24 Aug 2025</div>
+                    <div><span>🎓</span> Experience: 3-5 years</div>
+                    <div><span>🗓️</span> Posted: 27 Aug 2025</div>
+                    <div><span>⏰</span> Last date: -</div>
                 </div>
                 <div style="display: flex; align-items: center; gap: 0.5em;">
                     <button onclick="handleClick('details4', 'counter4')" style="margin: 0;">View Details</button>
@@ -529,7 +546,19 @@
                 </div>
                 <div class="job-details" id="details4">
                     <strong>About company:</strong> Applied Materials is a global leader in materials engineering solutions for the semiconductor, display, and related industries.<br>
-                    <strong>Roles & responsibilities:</strong> Will be updated soon...
+                    <strong>Project:</strong> Semiconductor Documentation<br>
+                    <strong>Educational qualification:</strong> Btech Graduates<br>
+                    <strong>Roles & responsibilities:</strong> Must be able to prioritize and complete multiple tasks and follow through with team members to achieve group and individual goals.
+• Highly organized and detailed‐oriented. Ability to build and maintain positive and productive inter‐departmental working relationships. Ability to influence team members and stakeholders on change management.
+• Understanding of DITA/XML
+• Have an understanding of technical certification methods for global audiences.
+• Must be flexible and possess outstanding decision‐making skills.
+• Excellent verbal, written and interpersonal communication skills; ability to work cross functionally, maintain, and regularly update multiple project schedules.
+• Must be a quick learner, self‐starter and have the ability to work with minimal supervision in a fast‐paced, high‐tech environment.<br>
+                    <div class="hr-contact-row" style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.7em;">
+                        <span style="flex: 1; min-width: 180px;"><strong>HR Mobile:</strong> -</span>
+                        <span style="flex: 1; min-width: 220px; text-align: right;"><strong>HR Email:</strong> -</span>
+                    </div>
                 </div>
             </li>
 
@@ -538,9 +567,10 @@
                 <div class="job-meta" style="flex-wrap: wrap; gap: 1.5em;">
                     <div><span>🏢</span> <span class="company-name">TCS</span></div>
                     <div><span>💼</span> QA tester</div>
-                    <div><span>🌐</span> Software testing</div>
                     <div><span>📍</span> Hyderabad</div>
+                    <div><span>🎓</span> Experience: -</div>
                     <div><span>🗓️</span> Posted: 24 Aug 2025</div>
+                    <div><span>⏰</span> Last date: -</div>
                 </div>
                 <div style="display: flex; align-items: center; gap: 0.5em;">
                     <button onclick="handleClick('details5', 'counter5')" style="margin: 0;">View Details</button>
@@ -548,7 +578,13 @@
                 </div>
                 <div class="job-details" id="details5">
                     <strong>About company:</strong> TCS is a global leader in IT services, consulting, and business solutions.<br>
-                    <strong>Roles & responsibilities:</strong> Will be updated soon...
+                    <strong>Project:</strong> Software testing<br>
+                    <strong>Educational qualification:</strong> -<br>
+                    <strong>Roles & responsibilities:</strong> Will be updated soon...<br>
+                    <div class="hr-contact-row" style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.7em;">
+                        <span style="flex: 1; min-width: 180px;"><strong>HR Mobile:</strong> -</span>
+                        <span style="flex: 1; min-width: 220px; text-align: right;"><strong>HR Email:</strong> -</span>
+                    </div>
                 </div>
             </li>
 
@@ -557,9 +593,10 @@
                 <div class="job-meta" style="flex-wrap: wrap; gap: 1.5em;">
                     <div><span>🏢</span> <span class="company-name">Infosys</span></div>
                     <div><span>💼</span> SAP consultant</div>
-                    <div><span>🌐</span> SAP implementation</div>
                     <div><span>📍</span> Pune</div>
+                    <div>Experience: -</div>
                     <div><span>🗓️</span> Posted: 24 Aug 2025</div>
+                    <div><span>⏰</span> Last date: -</div>
                 </div>
                 <div style="display: flex; align-items: center; gap: 0.5em;">
                     <button onclick="handleClick('details6', 'counter6')" style="margin: 0;">View Details</button>
@@ -567,7 +604,13 @@
                 </div>
                 <div class="job-details" id="details6">
                     <strong>About company:</strong> Infosys is a global leader in next-generation digital services and consulting.<br>
-                    <strong>Roles & responsibilities:</strong> Will be updated soon...
+                    <strong>Project:</strong> SAP implementation<br>
+                    <strong>Educational qualification:</strong> -<br>
+                    <strong>Roles & responsibilities:</strong> Will be updated soon...<br>
+                    <div class="hr-contact-row" style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.7em;">
+                        <span style="flex: 1; min-width: 180px;"><strong>HR Mobile:</strong> -</span>
+                        <span style="flex: 1; min-width: 220px; text-align: right;"><strong>HR Email:</strong> -</span>
+                    </div>
                 </div>
             </li>
 
@@ -576,9 +619,10 @@
                 <div class="job-meta" style="flex-wrap: wrap; gap: 1.5em;">
                     <div><span>🏢</span> <span class="company-name">Wipro</span></div>
                     <div><span>💼</span> DevOps engineer</div>
-                    <div><span>🌐</span> Cloud infrastructure</div>
                     <div><span>📍</span> Chennai</div>
+                    <div>Experience: -</div>
                     <div><span>🗓️</span> Posted: 24 Aug 2025</div>
+                    <div><span>⏰</span> Last date: -</div>
                 </div>
                 <div style="display: flex; align-items: center; gap: 0.5em;">
                     <button onclick="handleClick('details7', 'counter7')" style="margin: 0;">View Details</button>
@@ -586,7 +630,13 @@
                 </div>
                 <div class="job-details" id="details7">
                     <strong>About company:</strong> Wipro is a leading global information technology, consulting, and business process services company.<br>
-                    <strong>Roles & responsibilities:</strong> Will be updated soon...
+                    <strong>Project:</strong> Cloud infrastructure<br>
+                    <strong>Educational qualification:</strong> -<br>
+                    <strong>Roles & responsibilities:</strong> Will be updated soon...<br>
+                    <div class="hr-contact-row" style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.7em;">
+                        <span style="flex: 1; min-width: 180px;"><strong>HR Mobile:</strong> -</span>
+                        <span style="flex: 1; min-width: 220px; text-align: right;"><strong>HR Email:</strong> -</span>
+                    </div>
                 </div>
             </li>
             <li data-domain="Developer">
@@ -594,17 +644,24 @@
     <div class="job-meta" style="flex-wrap: wrap; gap: 1.5em;">
         <div><span>🏢</span> <span class="company-name">[Company Name]</span></div>
         <div><span>💼</span> [Designation]</div>
-        <div><span>🌐</span> [Project/domain]</div>
         <div><span>📍</span> [Location]</div>
-        <div><span>🗓️</span> Posted: [Date]</div>
+    <div><span>🎓</span> Experience: -</div>
+        <div><span>�️</span> Posted: [Date]</div>
+        <div><span>⏰</span> Last date: -</div>
     </div>
     <div style="display: flex; align-items: center; gap: 0.5em;">
         <button onclick="handleClick('detailsX', 'counterX')" style="margin: 0;">View Details</button>
         <span id="counterX" style="color:#888; font-size:0.97em; line-height: 1; display: flex; align-items: center; height: 100%;">Clicks: 0</span>
     </div>
     <div class="job-details" id="detailsX">
-    <strong>About company:</strong> [Company description]<br>
-    <strong>Roles & responsibilities:</strong> [Details or 'Will be updated soon...']
+        <strong>About company:</strong> [Company description]<br>
+        <strong>Project:</strong> [Project/domain]<br>
+        <strong>Educational qualification:</strong> -<br>
+        <strong>Roles & responsibilities:</strong> [Details or 'Will be updated soon...']<br>
+        <div class="hr-contact-row" style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.7em;">
+            <span style="flex: 1; min-width: 180px;"><strong>HR Mobile:</strong> -</span>
+            <span style="flex: 1; min-width: 220px; text-align: right;"><strong>HR Email:</strong> -</span>
+        </div>
     </div>
 </li>
         </ul>
